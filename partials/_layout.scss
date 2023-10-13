@@ -1,0 +1,296 @@
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+//BG Home
+
+.bg-home{
+    position: relative;
+}
+
+.bg-home::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(to bottom, $second-normal, $primary-normal), url("../assets/sodapdf-converted.png");
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    opacity: 0.9;
+
+}
+
+// bh-home finalizado
+
+// hero
+
+.hero{
+    color: $black-normal;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+
+    h1{
+        text-align: center;
+        line-height: 150%;
+        max-width: 940px;
+        font-size: 46px;
+    }
+
+    p{
+       text-align: center;
+       margin: 14px 0; 
+    }
+}
+
+.button-contact{
+    padding: 14px 28px;
+    color: $black-normal;
+    background-color: rgb(201, 198, 198);
+    border: 0;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 14px 0;
+}
+
+.button-contact:hover{
+    animation: scaleButton 0.8s alternate infinite;
+}
+
+@keyframes scaleButton{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.07);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .hero{
+        min-height: 60vh;
+        h1{
+            font-size: 34px;
+            padding: 0 14px;
+            width: 100%;
+        }
+
+        p{
+           font-size: 14px; 
+        }
+    }    
+}
+
+@media screen and (max-width: 480px){
+    .hero h1{
+        font-size: 24px;
+    }
+}
+
+//hero finalizado
+
+//About
+.about{
+    background-color: $second-normal;
+    overflow: hidden;
+    color: $black-normal;
+}
+
+.about-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 34px 14px 64px 14px;
+
+
+    img{
+
+        max-width: 570px;
+
+    }
+}
+
+.about-content div{
+    flex: 1;
+}
+
+.about-description{
+    h2{
+        font-size: 38px;
+        margin-bottom: 24px;
+    }
+
+    p{
+        margin-bottom: 14px;
+        line-height: 150%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .about-content{
+        flex-direction: column;
+    }
+}
+
+// fim do about
+
+// services
+
+.services{
+    background-color: $primary-normal;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 14px;
+}
+
+.services-content h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 14px;
+}
+
+.services-content p{
+    line-height: 150%;
+    margin-bottom: 14px;
+    text-align: center;
+    max-width: 780px;
+}
+
+.empresas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 0 44px 34px 44px;
+}
+
+.empresa{
+    flex: 1;
+    display: column;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px -1px 17px -4px rgba(0,0,0, 0.6);
+
+    overflow: hidden;
+
+    img{
+        width: 100%;
+        max-width: 354px;
+        transition: transform 0.2s;
+    }
+}
+
+.empresa img:hover{
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+.empresa-info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+    background-color: white;
+    z-index: 90;
+}
+
+.empresa-info button{
+    color: white;
+    background-color: $four-normal;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 0;
+    cursor: default;
+}
+
+@media screen and (max-width: 768px) {
+    .empresas{
+        flex-direction: column;
+    }
+
+    .empresa img{
+        max-width: 740px;
+    }
+}
+
+// Fim de Services
+
+// FOOTER
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 0;
+    gap: 25px;
+}
+
+.footer-icons{
+    display: flex;
+    gap: 8px;
+}
+
+//btn-whats
+
+.btn-whatsapp{
+    position: fixed;
+    bottom: 14px;
+    right: 24px;
+    z-index: 99;
+
+    img{
+        max-width: 74px;
+        transition: transform 0.4s;
+    }
+
+    img:hover{
+        transform: scale(1.1);
+    }
+}
+
+.btn-whatsapp .tooltip-text{
+    visibility: hidden;
+    position: absolute;
+    width: 120px;
+    top: 8px;
+    left: -144px;
+    padding: 4px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+    color: $black-normal;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-whatsapp:hover .tooltip-text{
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-widht: 768px){
+    .btn-whatsapp{
+        img{
+            max-width: 64px;
+        }
+    }
+}
